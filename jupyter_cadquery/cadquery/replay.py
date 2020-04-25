@@ -361,7 +361,7 @@ class Replay(object):
                 ortho=ortho,
                 cad_width=self.cad_width,
                 height=self.height,
-                show_parents=(len(cad_objs) == 1),
+                #show_parents=(len(cad_objs) == 1),
                 position=position,
                 rotation=rotation,
                 zoom=zoom)

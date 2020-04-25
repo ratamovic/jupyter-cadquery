@@ -17,7 +17,7 @@ dependencies:
   - pip=19.3.1
   - pythonocc-core=0.18.2
   - pip:
-    - git+https://github.com/CadQuery/cadquery.git
+    - git+https://github.com/CadQuery/cadquery.git@45cfa16813d1dcf037f2b2d6b2f943fc64f86c1f
     - sidecar==0.3.0
     - pythreejs==2.1.1
     - jupyter_cadquery==0.9.5

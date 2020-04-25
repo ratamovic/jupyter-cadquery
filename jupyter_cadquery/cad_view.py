@@ -466,8 +466,9 @@ class CadqueryView(object):
         camera_target = self.bb.center
         camera_up = (0.0, 0.0, 1.0)
 
-        if rotation != (0, 0, 0):
-            position = rotate(position, *rotation)
+        if rotation is not None and rotation != (0, 0, 0):
+            print(*rotation)
+            position = rotate(position, rotation[0], rotation[1], rotation[2])
 
         camera_position = self._add(self.bb.center,
                                     self._scale([1, 1, 1] if position is None else self._scale(position)))
@@ -503,7 +504,8 @@ class CadqueryView(object):
         self.controller = OrbitControls(controlling=self.camera, target=camera_target, target0=camera_target)
 
         # Update controller to instantiate camera position
-        self.camera.zoom = zoom
+        if zoom is not None:
+            self.camera.zoom = zoom
         self._update()
 
         self.picker = Picker(controlling=self.pickable_objects, event='dblclick')
